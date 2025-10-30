@@ -1,6 +1,6 @@
-# =========================================
+
 # Klase "Gramata" glabā informāciju par vienu grāmatu
-# =========================================
+
 class Gramata:
     def __init__(self, nosaukums, autors, gads):
         # Katras grāmatas īpašības (dati)
@@ -13,18 +13,17 @@ class Gramata:
         return f"{self.nosaukums} - {self.autors} ({self.gads})"
 
 
-# =========================================
 # Klase "Biblioteka" – glabā visu grāmatu sarakstu
 # un satur metodes darbībām ar tām
-# =========================================
+
 class Biblioteka:
     def __init__(self):
         # Saraksts, kurā glabāsies visas grāmatas
         self.gramatas = []
 
-    # ------------------------------
+ 
     # Metode, lai pievienotu jaunu grāmatu
-    # ------------------------------
+ 
     def pievienot_gramatu(self):
         nosaukums = input("Ievadi grāmatas nosaukumu: ")
         autors = input("Ievadi autora vārdu: ")
@@ -34,9 +33,8 @@ class Biblioteka:
         self.gramatas.append(Gramata(nosaukums, autors, gads))
         print("Grāmata pievienota!")
 
-    # ------------------------------
     # Metode, kas parāda visas grāmatas
-    # ------------------------------
+ 
     def paradit_gramatas(self):
         if not self.gramatas:  # pārbauda, vai saraksts nav tukšs
             print("Bibliotēka ir tukša.")
@@ -45,9 +43,9 @@ class Biblioteka:
             for i, g in enumerate(self.gramatas, start=1):
                 print(f"{i}. {g}")
 
-    # ------------------------------
+    
     # Metode grāmatas meklēšanai pēc nosaukuma vai autora
-    # ------------------------------
+    
     def meklet_gramatu(self):
         teksts = input("Ievadi meklējamo vārdu: ").lower()
         # Izmanto saraksta izteiksmi, lai atlasītu tikai tās grāmatas,
@@ -61,10 +59,10 @@ class Biblioteka:
         else:
             print("Nekas netika atrasts.")
 
-    # ------------------------------
+    
     # Metode, kas aprēķina statistiku
     # (vidējo grāmatu izdošanas gadu)
-    # ------------------------------
+    
     def statistika(self):
         if not self.gramatas:
             print("Nav datu statistikai.")
@@ -79,9 +77,9 @@ class Biblioteka:
                 print("Gadi nav korekti ievadīti.")
 
 
-# =========================================
+
 # Galvenā izvēlne, kas ļauj lietotājam vadīt programmu
-# =========================================
+
 def galvena_izvelne():
     biblioteka = Biblioteka()  # Izveido bibliotēkas objektu
 
@@ -112,8 +110,8 @@ def galvena_izvelne():
             print("Nepareiza izvēle! Mēģini vēlreiz.")
 
 
-# =========================================
+
 # Programmas starts
-# =========================================
+
 if __name__ == "__main__":
     galvena_izvelne()
